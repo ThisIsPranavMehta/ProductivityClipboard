@@ -33,9 +33,9 @@ namespace learningForms
 
             _hookID = SetHook(_proc);  //Set our hook
         }
-        ///////////////////////////////////////////////////////////
-        //A bunch of DLL Imports to set a low level keyboard hook
-        ///////////////////////////////////////////////////////////
+
+
+        // DLL IMPORTS - required for the keylogger to get the keystroke information from the user. 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr SetWindowsHookEx(int idHook,
             LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
@@ -58,10 +58,13 @@ namespace learningForms
 
 
         private const int WH_KEYBOARD_LL = 13;                    //Type of Hook - Low Level Keyboard
+        
         private const int WM_KEYDOWN = 0x0100;                    //Value passed on KeyDown
         private const int WM_KEYUP = 0x0101;                      //Value passed on KeyUp
+
         private static LowLevelKeyboardProc _proc = HookCallback; //The function called when a key is pressed
         private static IntPtr _hookID = IntPtr.Zero;
+        
         private static bool CONTROL_DOWN = false;                 //Bool to use as a flag for control key
         
         internal static bool COPIED = false;                        // denotes whether the copy operation is performed
@@ -129,7 +132,7 @@ namespace learningForms
                     //CONTROL_DOWN=false;
                     //SendKeys.Send("^v");
                 }
-                //else if (theKey == "Escape")                      //If they p
+                //else if (theKey == "Escape")                      // use this to disable the listener? -- not a good choice right now. basically the hook gets auto cleaned later. 
                 //s escape
                 //{
                 //    UnhookWindowsHookEx(_hookID);                 //Release our hook

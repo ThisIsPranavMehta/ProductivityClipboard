@@ -96,6 +96,10 @@ namespace ProductivityClipboard
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex>9 || e.RowIndex < 0)
+            {
+                return;
+            }
             if (e.ColumnIndex == 3)
             {
 
@@ -126,6 +130,10 @@ namespace ProductivityClipboard
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex>= TasksData.GetAllTasks().Count || e.RowIndex < 0)
+            {
+                return;
+            }
             if (e.ColumnIndex == 2)
             {
                 TasksData.deleteTask(e.RowIndex);
@@ -141,6 +149,10 @@ namespace ProductivityClipboard
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= MathsData.GetAllValues().Count || e.RowIndex < 0)
+            {
+                return;
+            }
             if (e.ColumnIndex == 1)
             {
                 MathsData.RemoveValue(e.RowIndex);

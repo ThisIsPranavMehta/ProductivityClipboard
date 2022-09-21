@@ -15,7 +15,8 @@ namespace ProductivityClipboard
         public ClipboardItem()               // only called when no object is found in the txt file.
         {
             data = "";
-            append = false;                         
+            append = false;
+            channelName = "";
         }
 
         public void DeleteData()

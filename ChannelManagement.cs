@@ -73,10 +73,12 @@ namespace learningForms
             Debug.WriteLine("-------------In Channel Management: " + ChannelId.ToString());
             if (ChannelId!=null && ChannelId != -1)
             {
+                string defaultVal = ChannelId == 10 ? "0" : " ";
                 Debug.WriteLine("copy the text from the ChannelId : " + ChannelId);                  // users wants to copy the text to ChannelId 1
-                Clipboard.SetText(FileHandling.ReadData(ChannelId));
-                Debug.WriteLine("ChannelId: " + ChannelId);
-                Thread.Sleep(300);                  //  required to make sure that context doesn't switch fast and the keystroke is additionally added to the text. 
+                string res = FileHandling.ReadData(ChannelId);
+                Clipboard.SetText(res==""?defaultVal:res);
+                //Debug.WriteLine("ChannelId: " + ChannelId);
+                //Thread.Sleep(300);                  //  required to make sure that context doesn't switch fast and the keystroke is additionally added to the text. 
                 return true;
             }
             return false;

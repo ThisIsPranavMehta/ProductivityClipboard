@@ -43,6 +43,10 @@ namespace ProductivityClipboard
                 dataGridView1.Rows[idx].Cells[1].Value = ClipboardItem[i].data;
                 dataGridView1.Rows[idx].Cells[2].Value = ClipboardItem[i].append;
                 dataGridView1.Rows[idx].Cells[0].Value = ClipboardItem[i].channelName;
+                if (ClipboardItem[idx].channelName == "")
+                {
+                    dataGridView1.Rows[idx].Cells[0].Value = "Bucket" + i.ToString();
+                }
 
             }
         }

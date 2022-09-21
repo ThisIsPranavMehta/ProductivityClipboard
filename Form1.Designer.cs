@@ -205,7 +205,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(708, 23);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Search!";
+            this.textBox1.Text = "Search : (Feature coming soon!)";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // splitContainer4
             // 

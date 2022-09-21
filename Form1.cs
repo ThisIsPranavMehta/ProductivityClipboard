@@ -240,5 +240,10 @@ namespace ProductivityClipboard
                 ClipboardItemWriter.WriteDataToBuffer(ChannelManagement.GetPath(i),ClipboardItem[i]);
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // use this for search!
+        }
     }
 }

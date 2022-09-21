@@ -35,6 +35,10 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ChannelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Append = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
@@ -52,10 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.ChannelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Append = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -167,9 +167,37 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(651, 305);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ChannelName
+            // 
+            this.ChannelName.HeaderText = "Channel Name";
+            this.ChannelName.Name = "ChannelName";
+            this.ChannelName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Data
+            // 
+            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Append
+            // 
+            this.Append.HeaderText = "Append Mode";
+            this.Append.Name = "Append";
+            // 
+            // Remove
+            // 
+            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Remove.HeaderText = "Remove";
+            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
+            this.Remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Remove.Name = "Remove";
+            this.Remove.Width = 56;
             // 
             // textBox1
             // 
@@ -367,32 +395,6 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
-            // 
-            // ChannelName
-            // 
-            this.ChannelName.HeaderText = "Channel Name";
-            this.ChannelName.Name = "ChannelName";
-            // 
-            // Data
-            // 
-            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            // 
-            // Append
-            // 
-            this.Append.HeaderText = "Append Mode";
-            this.Append.Name = "Append";
-            this.Append.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Remove
-            // 
-            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Remove.HeaderText = "Remove";
-            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
-            this.Remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Remove.Name = "Remove";
-            this.Remove.Width = 56;
             // 
             // Form1
             // 

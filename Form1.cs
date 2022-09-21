@@ -35,13 +35,15 @@ namespace ProductivityClipboard
                 string path = ChannelManagement.GetPath(i);
 
 
-                dataGridView1.Rows[idx].Cells[0].Value = "Channel: " + i.ToString();
+                dataGridView1.Rows[idx].Cells[0].Value = "Bucket: " + i.ToString();
 
 
                 ClipboardItem[i] = ClipboardItemReader.GetDataFromBuffer(path);
                 
                 dataGridView1.Rows[idx].Cells[1].Value = ClipboardItem[i].data;
                 dataGridView1.Rows[idx].Cells[2].Value = ClipboardItem[i].append;
+                dataGridView1.Rows[idx].Cells[0].Value = ClipboardItem[i].channelName;
+
             }
         }
 
@@ -183,6 +185,11 @@ namespace ProductivityClipboard
            ClipboardItem[i] = ClipboardItemReader.GetDataFromBuffer(path);
            dataGridView1.Rows[i].Cells[1].Value = ClipboardItem[i].data;
            dataGridView1.Rows[i].Cells[2].Value = ClipboardItem[i].append;
+           dataGridView1.Rows[i].Cells[0].Value = ClipboardItem[i].channelName;
+            if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "")
+            {
+                dataGridView1.Rows[i].Cells[0].Value = "Bucket : " + i.ToString();
+            }
         }
         internal void LoadMathsData()
         {
@@ -208,6 +215,14 @@ namespace ProductivityClipboard
                 dataGridView2.Rows[row++].Cells[1].Value = task.Completed;
             }
             dataGridView2.AutoSize = true;
+        }
+        private void Form1_Closing(object sender, EventArgs e)         
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                ClipboardItem[i].channelName = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                ClipboardItemWriter.WriteDataToBuffer(ChannelManagement.GetPath(i),ClipboardItem[i]);
+            }
         }
     }
 }

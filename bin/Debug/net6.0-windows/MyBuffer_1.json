@@ -1,1 +1,1 @@
-{"data":"data going to buffer 1\r\n","append":false}
+{"channelName":"Bucket: 1","data":"dataGridView1.Rows[idx].Cells[2].Value = ClipboardItem[i].append;\r\n                ","append":false}

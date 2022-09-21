@@ -170,6 +170,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(651, 305);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            //this.dataGridView1.Leave+= new System.EventHandler(this.DataGridView1_LostFocus);               //not sure if this is the right way- so mark it as work around for now!
             // 
             // ChannelName
             // 
@@ -408,6 +409,7 @@
             this.Text = "Productivity Clipboard!";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_Closing);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

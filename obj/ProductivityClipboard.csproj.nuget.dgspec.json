@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Git\\advancedClipboard\\ProductivityClipboard\\ProductivityClipboard.csproj": {}
+    "C:\\Git\\ProductivityClipboard\\ProductivityClipboard.csproj": {}
   },
   "projects": {
-    "C:\\Git\\advancedClipboard\\ProductivityClipboard\\ProductivityClipboard.csproj": {
+    "C:\\Git\\ProductivityClipboard\\ProductivityClipboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Git\\advancedClipboard\\ProductivityClipboard\\ProductivityClipboard.csproj",
+        "projectUniqueName": "C:\\Git\\ProductivityClipboard\\ProductivityClipboard.csproj",
         "projectName": "ProductivityClipboard",
-        "projectPath": "C:\\Git\\advancedClipboard\\ProductivityClipboard\\ProductivityClipboard.csproj",
+        "projectPath": "C:\\Git\\ProductivityClipboard\\ProductivityClipboard.csproj",
         "packagesPath": "C:\\Users\\pranavmehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Git\\advancedClipboard\\ProductivityClipboard\\obj\\",
+        "outputPath": "C:\\Git\\ProductivityClipboard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

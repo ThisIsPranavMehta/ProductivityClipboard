@@ -9,6 +9,7 @@ namespace ProductivityClipboard
 {
     public class ClipboardItem
     {
+        public string channelName { get; set; }
         public string data { get; set; }
         public bool append { get; set; }
         public ClipboardItem()               // only called when no object is found in the txt file.

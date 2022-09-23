@@ -21,7 +21,11 @@ namespace learningForms
         [Preserve]
         public TasksData()
         {
-            
+        }
+
+        public TasksData(List<TaskData> Tasks)
+        {
+            this.Tasks = Tasks;
         }
 
 

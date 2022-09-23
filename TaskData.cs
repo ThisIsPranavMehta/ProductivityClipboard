@@ -15,6 +15,7 @@ namespace learningForms
         [JsonConstructor]
         public TaskData(string TaskName)
         {
+            priority = "5";                   //priority is set to least by default 
             Name = TaskName;
             Completed = false;
         }
@@ -23,5 +24,7 @@ namespace learningForms
 
         [Preserve]
         public String Name { get; set; }
+
+        public string priority { get; set; }   // the lower the more important it is!
     }
 }

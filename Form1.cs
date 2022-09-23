@@ -61,6 +61,7 @@ namespace ProductivityClipboard
                 int i = dataGridView2.Rows.Add();
                 dataGridView2.Rows[i].Cells[0].Value = task.Name.ToString();
                 dataGridView2.Rows[i].Cells[1].Value = task.Completed;
+                dataGridView2.Rows[i].Cells[2].Value = task.priority;
                 //dataGridView1.Rows[i].Cells[2].
                 //dataGridView1.Rows[i].Cells[1].
             }
@@ -139,6 +140,10 @@ namespace ProductivityClipboard
                 return;
             }
             if (e.ColumnIndex == 2)
+            {
+                //return ! -- this isn't important!
+            }
+            if (e.ColumnIndex == 3)
             {
                 TasksData.deleteTask(e.RowIndex);
                 TasksWriter.WriteTasks(ChannelManagement.GetPath(11),TasksData);
@@ -228,7 +233,8 @@ namespace ProductivityClipboard
             foreach (TaskData task in Tasks)
             {
                 dataGridView2.Rows[row].Cells[0].Value = task.Name.ToString();
-                dataGridView2.Rows[row++].Cells[1].Value = task.Completed;
+                dataGridView2.Rows[row].Cells[1].Value = task.Completed;
+                dataGridView2.Rows[row++].Cells[2].Value = task.priority;
             }
             dataGridView2.AutoSize = true;
         }
@@ -239,6 +245,13 @@ namespace ProductivityClipboard
                 ClipboardItem[i].channelName = dataGridView1.Rows[i].Cells[0].Value.ToString();
                 ClipboardItemWriter.WriteDataToBuffer(ChannelManagement.GetPath(i),ClipboardItem[i]);
             }
+            List<TaskData> Tasks = TasksData.GetAllTasks();
+            int count = Tasks.Count;
+            for(int i = 0; i < count; i++)
+            { 
+                Tasks[i].priority = dataGridView2.Rows[i].Cells[2].Value.ToString();
+            }
+            TasksWriter.WriteTasks(ChannelManagement.GetPath(11), new TasksData(Tasks));
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

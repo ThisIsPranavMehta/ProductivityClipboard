@@ -1,4 +1,5 @@
 using learningForms;
+using System.Runtime.InteropServices;
 
 namespace ProductivityClipboard
 {
@@ -15,9 +16,11 @@ namespace ProductivityClipboard
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-
             MainForm = new Form1();
+            TitleBarGui.UseImmersiveDarkMode(MainForm.Handle,true);
             Application.Run(MainForm);
         }
     }
 }
+
+

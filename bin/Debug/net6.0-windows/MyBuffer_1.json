@@ -1,1 +1,1 @@
-{"channelName":"Bucket 1","data":"\r\n                Debug.WriteLine(\"-----------------------------------priority: \" + task.priority);","append":false}
+{"channelName":"Bucket 1","data":"dataGridView1.EnableHeadersVisualStyles = false;","append":false}

@@ -3,6 +3,7 @@ using ProductivityClipboard.Properties;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace ProductivityClipboard
 {
@@ -24,6 +25,40 @@ namespace ProductivityClipboard
             filldataForTasks();             // to fill the 
             filldataForMaths();
             FillDataForBuffers();
+
+            setDataGridColors();
+
+            RemoveSelectedCell();
+        }
+
+        private void RemoveSelectedCell()
+        {
+            dataGridView1.CurrentCell.Selected = false;
+            dataGridView2.CurrentCell.Selected = false;
+            dataGridView3.CurrentCell.Selected = false;
+
+        }
+        private void setDataGridColors()
+        {
+            Color backColor= Color.FromArgb(255, 10, 10, 10); 
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.RowHeadersDefaultCellStyle.BackColor = backColor;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = backColor;
+            dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = backColor;
+            dataGridView2.RowHeadersDefaultCellStyle.BackColor =   backColor;
+            dataGridView2.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView3.EnableHeadersVisualStyles = false;
+            dataGridView3.ColumnHeadersDefaultCellStyle.BackColor = backColor;
+            dataGridView3.RowHeadersDefaultCellStyle.BackColor = backColor;
+            dataGridView3.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView3.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
         private void FillDataForBuffers()
         {
@@ -39,7 +74,8 @@ namespace ProductivityClipboard
 
 
                 ClipboardItem[i] = ClipboardItemReader.GetDataFromBuffer(path);
-                
+                dataGridView1.Rows[idx].DefaultCellStyle.BackColor = Color.FromArgb(255, 15, 15, 15);
+                dataGridView1.Rows[idx].DefaultCellStyle.ForeColor = Color.White;
                 dataGridView1.Rows[idx].Cells[1].Value = ClipboardItem[i].data;
                 dataGridView1.Rows[idx].Cells[2].Value = ClipboardItem[i].append;
                 dataGridView1.Rows[idx].Cells[0].Value = ClipboardItem[i].channelName;
@@ -55,10 +91,14 @@ namespace ProductivityClipboard
         {
             TasksData = TasksReader.GetTasksData(ChannelManagement.GetPath(11));
 
+
             List<TaskData> Tasks = TasksData.GetAllTasks();
             foreach (TaskData task in Tasks)
             {
                 int i = dataGridView2.Rows.Add();
+
+                dataGridView2.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 15, 15, 15); 
+                dataGridView2.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                 dataGridView2.Rows[i].Cells[0].Value = task.Name.ToString();
                 dataGridView2.Rows[i].Cells[1].Value = task.Completed;
                 dataGridView2.Rows[i].Cells[2].Value = task.priority;
@@ -67,12 +107,16 @@ namespace ProductivityClipboard
             }
             dataGridView2.AutoSize = true;
         }
+
         public void filldataForMaths()
         {
+
             MathsData = MathematicalReader.GetMathsData(ChannelManagement.GetPath(10));
             foreach (Double d in MathsData.Values)
             {
                 int i = dataGridView3.Rows.Add();
+                dataGridView3.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 15, 15, 15);
+                dataGridView3.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                 dataGridView3.Rows[i].Cells[0].Value = d.ToString();
             }
             label5.Text = MathsData.Resultant.ToString();                 // make a valid label box for this!
@@ -209,6 +253,8 @@ namespace ProductivityClipboard
            dataGridView1.Rows[i].Cells[0].Value = ClipboardItem[i].channelName;
             if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "")
             {
+                dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 15, 15, 15);
+                dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                 dataGridView1.Rows[i].Cells[0].Value = "Bucket : " + i.ToString();
             }
         }
@@ -219,6 +265,8 @@ namespace ProductivityClipboard
             int row = 0;
             foreach (Double d in MathsData.Values)
             {
+                dataGridView3.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(255, 15, 15, 15);
+                dataGridView3.Rows[row].DefaultCellStyle.ForeColor = Color.White;
                 dataGridView3.Rows[row++].Cells[0].Value = d.ToString();
             }
             label5.Text = MathsData.Resultant.ToString();                 // make a valid label box for this!
@@ -232,6 +280,8 @@ namespace ProductivityClipboard
             int row = 0;
             foreach (TaskData task in Tasks)
             {
+                dataGridView2.Rows[row].DefaultCellStyle.BackColor = Color.FromArgb(255, 15, 15, 15);
+                dataGridView2.Rows[row].DefaultCellStyle.ForeColor = Color.White;
                 dataGridView2.Rows[row].Cells[0].Value = task.Name.ToString();
                 dataGridView2.Rows[row].Cells[1].Value = task.Completed;
                 dataGridView2.Rows[row++].Cells[2].Value = task.priority;

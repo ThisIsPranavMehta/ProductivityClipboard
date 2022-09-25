@@ -13,7 +13,7 @@ The default key combinations in the application are as follows-
 
 - Press the CTRL+V followed by 
   
-  -0 to 9 for paste the data present in the corresponding channel/bucket
+  -0 to 9 to paste the data present in the corresponding channel/bucket
   
   -M to paste the mathematically computed value for all the numbers present in the mathematical buffer. 
  

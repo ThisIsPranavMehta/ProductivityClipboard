@@ -4,19 +4,27 @@ The Application requires the hoteky combination CTRL+C to copy and CTRL+V to pas
 
 The default key combinations in the application are as follows-
 - Press the CTRL+C, followed by 
+
   -0 to 9 for copying the selected text onto the different channels/buckets as visible in the UI
+
   -M to add the selected text to the Mathematical buffer
+  
   -T to make a task out of the selected text. 
 
 - Press the CTRL+V followed by 
+  
   -0 to 9 for paste the data present in the corresponding channel/bucket
+  
   -M to paste the mathematically computed value for all the numbers present in the mathematical buffer. 
  
  
 
 THE GUI ENABLES THE USER TO 
+  
   -SELECT/DESELECT THE APPEND MODE FOR THE 0-9 BUFFERS.
+    
     -this would be a realtime change. [If APPEND mode is enabled, the data would be appended at the end of the previous data present in the buffer, *by default the mode is set to overwrite]
+  
   
   -DELETE THE TEXT IN ANY BUFFER
   

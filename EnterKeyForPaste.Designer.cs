@@ -99,7 +99,7 @@ namespace learningForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnterKeyForPaste";
-            this.Opacity = 0.5D;
+            this.Opacity = 0D;
             this.Text = "Enter Channel Name ";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_KeyDown);
             this.ResumeLayout(false);

@@ -103,7 +103,7 @@ namespace learningForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnterKeyForCopy";
-            this.Opacity = 0.5D;
+            this.Opacity = 0D;
             this.Text = "Enter Channel Name";
             this.Load += new System.EventHandler(this.EnterKeyForCopy_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_KeyDown);
